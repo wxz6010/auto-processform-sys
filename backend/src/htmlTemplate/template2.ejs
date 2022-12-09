@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <% if (data.length > 0) { %>
+    <% data.forEach((d, index)=>{ %>
+    <div style="width: 49%; float: left">
+	
+            <!-- left text col -->
+            <div style="width:60%; float:left;">
+                <div style="height: 20px"></div>
+                <% items.forEach((i)=>{ %>
+                <div style="line-height: 20px; width: 100% ;margin: 3px; word-break:break-all; word-wrap:break-word;">
+                    <span style="font-weight: bold ;font-size: 15px"><%= i.title %>：</span><span><%= d[i.id] %></span>
+                </div>
+                <% }) %>
+            </div >
+            <!-- right qr.code col -->
+            <div style="float:right;width:33%" >
+			<div style="height: 20px"></div>
+                <img style="width: 100px; height:100px; margin:5px;" src=<%= d.qrCode %> />
+            </div>
+			<div style="clear:both;height:0px;"></div>
+        </div>
+     
+    <% }) %>
+    <% } %>
+
+</body>
+
+</html>
